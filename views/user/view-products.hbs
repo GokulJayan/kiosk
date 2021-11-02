@@ -1,0 +1,40 @@
+<section>
+
+    <div class="container mt-5">
+        <div class="row">
+
+            {{#each products}}
+            <div class="col-md-3 p-3">
+                <div class="card img" style="width: 17rem; height: 32rem">
+                    <img class="card-img-top" src="http://localhost:3000/images/{{this.ID}}.jpeg" alt="Card image cap" height="250px">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{this.Name}}</h5>
+                        <p class="card-text">{{this.Description}}</p>
+                        <p class="card-text">cat: {{this.Category}}</p>
+                        <h6 class="card-text">₹{{this.Price}}</h6>
+                        <a href="/add-to-cart/{{this.ID}}" class="flex-column d-flex btn btn-warning">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </div>
+
+</section>
+
+
+<style>
+    .img:hover 
+    {
+        color: #424242;
+        -webkit-transition: all .3s ease-in;
+        -moz-transition: all .3s ease-in;
+        -ms-transition: all .3s ease-in;
+        -o-transition: all .3s ease-in;
+        transition: all .3s ease-in;
+        opacity: 1;
+        transform: scale(1.05);
+        background-color:rgb(245, 245, 245);
+    }
+</style>

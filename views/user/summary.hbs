@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/summary.css" type="text/css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section style="background-color: #eee;">
+        <div class="container  py-2 h-30">
+            <div class="row d-flex justify-content-center align-items-center h-30">
+                <div class="row g-0 col-lg-7 card rounded-3">
+                    <div class="card-body p-md-3 mx-md-4 ">
+                        <div class="text-center">
+                            <img src="http://localhost:3000/images/logo.JPG" style="width: 80px;" alt="logo"><br>
+                            <h4 class="mb-4 pt-2 pb-1 ">Summary</h4>
+                        </div>
+
+                        <form action="#" method="post" role="form">
+
+                            <table class="table mt-3">
+                                <thead class="thead-light text-center">
+                                    <tr>
+                                        <th scope="col">Item</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Qty</th>
+                                        <th scope="col">Total</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {{#each Items}}
+                                    <tr>
+                                        <td><img href="#" style="width: 50px" src="http://localhost:3000/images/{{this.ID}}.jpeg" alt="">
+                                        {{this.Name}}</td>
+                                        <td class="text-center">₹{{this.Price}}</td>
+                                        <td class="text-center">{{this.Count}}</td>
+                                        <td class="text-center">₹ {{this.Count}}*{{this.Price}}</td>
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+
+                            </table>
+
+                            <div class="container">
+                                <div class="row mb-4 float-right">
+                                    <a href="#" class="btn btn-outline-success m-auto">Total: ₹ {{total}}</a>
+                                </div>
+                            </div>
+                            <br><br><br>
+
+                            <div class="d-flex align-items-center justify-content-center pb-2">
+                                <a class="btn btn-warning btn-block fa-lg  mb-3" href="/payment">Make Payment</a>
+                            </div>
+
+                            <div class="d-flex align-items-center justify-content-center pb-2">
+                                <a class="text-muted" href="/cart">Go to Cart</a>
+                            </div>
+
+                            <a class="text-left text-danger" href="/products">Main Menu</a>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

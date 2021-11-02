@@ -1,0 +1,17 @@
+.gradient-custom-2 {
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to bottom, #ecea1a, #f1d200, #f4b900, #f3a100, #ef8900);
+  }
+  
+  @media (min-width: 768px) {
+    .gradient-form {
+      height: 100vh !important;
+    }
+  }
+  @media (min-width: 769px) {
+    .gradient-custom-2 {
+      border-top-right-radius: .3rem;
+      border-bottom-right-radius: .3rem;
+    }
+  }
