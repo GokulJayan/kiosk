@@ -3,52 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Payment Checkout Form</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+    <link rel="stylesheet" href="http://localhost:3000/stylesheets/payment.css" type="text/css">
+    <script type="text/javascript">
+        function showMessage() {
+            alert("Payment Successful");
+        }
+    </script>
+
 </head>
 
 <body>
-    <section style="background-color: #eee;">
-        <div class="container  py-2 h-30">
-            <div class="row d-flex justify-content-center align-items-center h-30">
-                <div class="row g-0 col-lg-7 card rounded-3">
-                    <div class="card-body p-md-3 mx-md-4 ">
-                        <div class="text-center">
-                            <img src="http://localhost:3000/images/logo.JPG" style="width: 80px;" alt="logo"><br>
-                            <h4 class="mb-4 pt-2 pb-1 ">Payment</h4>
-                        </div>
-
-                        
-                        
-                        <div class="container">
-                            <div class="row mb-4">
-                                <a href="#" class="btn btn-outline-success m-auto">Amount Payable: ₹{{total}}</a>
-                            </div>
-                        </div>
-                        <br>
-
-                        <div>
-                            <h2>Add deatials regarding payment Here!!!</h2>
-                        </div>
-
-                        <br>
-
-                        <div class="d-flex align-items-center justify-content-center pb-2">
-                            <a class="pl-5 pr-5 btn btn-success" href="#">Pay</a>
-                        </div>
-
-                        <div class="d-flex align-items-center justify-content-center pb-2">
-                            <a class="pl-4 pr-4 btn btn-danger" href="/products">Cancel</a>
-                        </div>
 
 
 
+    <div class="wrapper">
+        <div class="payment">
+            <div class="payment-logo">
+                <p>p</p>
+            </div>
+
+
+            <h2>Payment Gateway</h2>
+            <div class="form">
+                <div class="card space icon-relative">
+                    <label class="label">Card holder:</label>
+                    <input type="text" class="input" placeholder="Enter your Name">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="card space icon-relative">
+                    <label class="label">Card number:</label>
+                    <input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Enter your Card Number">
+                    <i class="far fa-credit-card"></i>
+                </div>
+                <div class="card-grp space">
+                    <div class="card-item icon-relative">
+                        <label class="label">Expiry date:</label>
+                        <input type="text" name="expiry-data" class="input" data-mask="00 / 00" placeholder="MM / YY">
+                        <i class="far fa-calendar-alt"></i>
+                    </div>
+                    <div class="card-item icon-relative">
+                        <label class="label">CVC:</label>
+                        <input type="text" class="input" data-mask="000" placeholder="000">
+                        <i class="fas fa-lock"></i>
                     </div>
                 </div>
+                <input class="btn btn-warning" type="button" id="btnShowMsg" value="Pay  ₹{{total}}" onClick="showMessage()" />
             </div>
         </div>
-    </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
 </body>
 
 </html>
